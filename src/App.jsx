@@ -69,7 +69,7 @@ function App() {
           <h1 className="md:text-[3rem] text-[1.75rem] lg:text-left text-center leading-[1] text-white font-bold">
             Learn to code by watching others
           </h1>
-          <p className="md:text-[1rem] text-[17px] text-white max-w-[500px] mt-[2rem] lg:text-left text-center mx-auto lg:mb-0 mb-[4rem]">
+          <p className="md:text-[1rem] text-[17px] text-white max-w-[500px] mt-[2rem] lg:text-left text-center lg:mx-0 mx-auto lg:mb-0 mb-[4rem]">
             See how experienced developers solve problems in real-time. Watching
             scripted tutorials is great, but understanding how developers think
             is invaluable.
