@@ -1,8 +1,9 @@
+/* eslint-disable no-useless-escape */
 import { useState } from "react";
 import "./App.css";
 
 const inputStyles =
-  "border-gray-200 border-[1px] rounded-md p-[1rem] pl-[2rem] placeholder:text-gray-500 placeholder:font-medium focus:border-slate-500 focus:outline-none font-semibold text-gray-600";
+  "border-gray-200 border-[1px] rounded-md p-[1rem] pl-[2rem] placeholder:text-gray-500 placeholder:font-medium focus:border-slate-500 focus:outline-none font-semibold text-gray-600 w-full min-w-[150px]";
 
 function App() {
   const [firstName, setFirstName] = useState("");
@@ -78,7 +79,7 @@ function App() {
         <div className="flex-1 flex flex-col gap-[1.5rem] lg:pl-[2rem]">
           <button
             type="button"
-            className="md:p-4 p-5 w-full rounded-lg bg-[var(--blue)] font-semibold text-white"
+            className="md:p-4 p-5 w-full rounded-lg bg-[var(--blue)] font-semibold text-white h-auto"
           >
             Try it free 7 days{" "}
             <span className="font-normal">
@@ -88,13 +89,12 @@ function App() {
           </button>
           <div
             id="form-container"
-            className="md:p-[3rem] p-[1.5rem] bg-white rounded-xl"
+            className="md:p-[3rem] p-[1.5rem] bg-white rounded-xl w-full"
           >
             <form className="flex flex-col gap-[1rem]">
               <input
-                className={`${inputStyles} ${
-                  firstNameError && "border-2 border-[var(--red)]"
-                }`}
+                className={`${inputStyles}`}
+                style={firstNameError ? { border: "2px solid var(--red)" } : {}}
                 type="text"
                 placeholder="First Name"
                 onChange={(e) => {
@@ -108,9 +108,8 @@ function App() {
                 </p>
               )}
               <input
-                className={`${inputStyles} ${
-                  lastNameError && "border-2 border-[var(--red)]"
-                }`}
+                className={`${inputStyles}`}
+                style={lastNameError ? { border: "2px solid var(--red)" } : {}}
                 type="text"
                 placeholder="Last Name"
                 onChange={(e) => {
@@ -124,9 +123,8 @@ function App() {
                 </p>
               )}
               <input
-                className={`${inputStyles} ${
-                  emailError && "border-2 border-[var(--red)] text-[var(--red)]"
-                }`}
+                className={`${inputStyles}`}
+                style={emailError ? { border: "2px solid var(--red)", color: "var(--red)"  } : {}}
                 type="email"
                 placeholder="Email Address"
                 autoComplete="username"
@@ -141,9 +139,8 @@ function App() {
                 </p>
               )}
               <input
-                className={`${inputStyles} ${
-                  passwordError && "border-2 border-[var(--red)]"
-                }`}
+                className={`${inputStyles}`}
+                style={passwordError ? { border: "2px solid var(--red)"} : {}}
                 type="password"
                 placeholder="Password"
                 autoComplete="current-password"
@@ -159,7 +156,7 @@ function App() {
               )}
               <button
                 type="submit"
-                className="p-4 w-full rounded-lg bg-[var(--green)] uppercase text-white font-medium tracking-wide"
+                className="p-4 w-full rounded-lg bg-[var(--green)] uppercase text-white font-medium tracking-wide h-auto"
                 onClick={(e) => validateInputs(e)}
               >
                 {" "}
